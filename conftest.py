@@ -30,3 +30,8 @@ def booker_token(api: APIRequestContext) -> str:
     token = response.json().get("token")
     assert token, f"No token in auth response: {response.text()}"
     return token
+
+
+def pytest_html_report_title(report) -> None:
+    """Title shown at the top of the published HTML report."""
+    report.title = "QA Playground – Test Report"
